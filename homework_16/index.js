@@ -9,20 +9,11 @@ if (interestInBooks) {
         
         if (whatGenre === detectiveGenre || whatGenre === horrorGenre ||whatGenre === fantasticGenre) {
         userAge = +prompt("Your age?");
-
-            if (userAge && userAge <= 10) {
-                book = "Murder on the Orient Express";
-                alert(book);
-                } else if (userAge && userAge <= 20) {
-                    book = "Alphabetical murders";
-                    alert(book);
-                } else if (userAge && userAge <= 30) {
-                    book = "Picnic at Plague Fort";
-                    alert(book);} 
-                else {
-                    book = "1984";
-                    alert(book);
-                }
+            (userAge && userAge <= 10) ? book = "Murder on the Orient Express" :
+            (userAge && userAge <= 20) ? book = "Alphabetical murders" :
+            (userAge && userAge <= 30) ? book = "Picnic at Plague Fort" :
+                                        book = "1984";
+            alert(book);              
         }   
         
         else {
@@ -33,16 +24,11 @@ if (interestInBooks) {
     else {
         reason = prompt("What reason?");
         userAge = +prompt("Your age?");
+            (userAge && userAge <= 10) ? book = 'Murder on the Orient Express' :
+            (userAge && userAge <= 20) ? book = 'Alphabetical murders' :
+            (userAge && userAge <= 30) ? book = 'Picnic at Plague Fort' :
+                                        book = '1984';
 
-        if (userAge && userAge <= 10) {
-            book = "Murder on the Orient Express";
-        } else if (userAge && userAge <= 20) {
-        book = "Alphabetical murders";
-        } else if (userAge && userAge <= 30) {
-        book = "Picnic at Plague Fort";
-        } else {
-        book = "1984";
-        }
         alert("I understand why you don't like it, " +
-        reason + " but I suggest reading " + book);
+        reason + ' but I suggest reading ' + book);
 }
