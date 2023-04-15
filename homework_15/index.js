@@ -2,7 +2,7 @@ var srtValue = 'Value: ';
 var srtType = 'Type of variable: ';
 var bool = true;
 var string = 'test string';
-var number = 0.1 + 0.2;
+var number = 1.15 + 2.30;
 var empty = null;
 
 alert('Welcome H1');
