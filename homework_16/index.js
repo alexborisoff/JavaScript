@@ -1,6 +1,6 @@
 var detectiveGenre = "detective";
 var horrorGenre = "horror";
-var fantasticGenre = "detective";
+var fantasticGenre = "fantastic";
 var interestInBooks = confirm("Are you likes books?");
 var whatGenre, userAge, reason, book;
 
