@@ -2,12 +2,12 @@ var detectiveGenre = "detective";
 var horrorGenre = "horror";
 var fantasticGenre = "fantastic";
 var interestInBooks = confirm("Do you like books?");
-var whatGenre, userAge, reason, book;
+var genre, userAge, reason, book;
 
 if (interestInBooks) {
-        whatGenre = prompt("What genre of books do you like?");
+    genre = prompt("What genre of books do you like?");
         
-        if (whatGenre === detectiveGenre || whatGenre === horrorGenre ||whatGenre === fantasticGenre) {
+        if (genre === detectiveGenre || genre === horrorGenre ||genre === fantasticGenre) {
         userAge = +prompt("Your age?");
             (userAge && userAge <= 10) ? book = "Murder on the Orient Express" :
             (userAge && userAge <= 20) ? book = "Alphabetical murders" :
