@@ -1,11 +1,11 @@
 var detectiveGenre = "detective";
 var horrorGenre = "horror";
 var fantasticGenre = "fantastic";
-var interestInBooks = confirm("Are you likes books?");
+var interestInBooks = confirm("Do you like books?");
 var whatGenre, userAge, reason, book;
 
 if (interestInBooks) {
-        whatGenre = prompt("What genre?");
+        whatGenre = prompt("What genre of books do you like?");
         
         if (whatGenre === detectiveGenre || whatGenre === horrorGenre ||whatGenre === fantasticGenre) {
         userAge = +prompt("Your age?");
@@ -22,7 +22,7 @@ if (interestInBooks) {
 } 
     
     else {
-        reason = prompt("What reason?");
+        reason = prompt("What is the reason you don't like books?");
         userAge = +prompt("Your age?");
             (userAge && userAge <= 10) ? book = 'Murder on the Orient Express' :
             (userAge && userAge <= 20) ? book = 'Alphabetical murders' :
@@ -30,5 +30,5 @@ if (interestInBooks) {
                                         book = '1984';
 
         alert("I understand why you don't like it, " +
-        reason + ' but I suggest reading ' + book);
+        reason + ' but I suggest you reading ' + book);
 }
