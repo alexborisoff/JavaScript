@@ -24,7 +24,5 @@ if (answerAboutBooks) {
             (userAge && userAge <= 20) ? nameBook = 'Alphabetical murders' :
             (userAge && userAge <= 30) ? nameBook = 'Picnic at Plague Fort' :
                                         nameBook = '1984';
-
-        alert("I understand why you don't like it, " +
-        reason + ' but I suggest you reading ' + nameBook);
+        alert(`I understand why you don't like it - ${reason}, but I suggest you reading ${nameBook}`);
 }
