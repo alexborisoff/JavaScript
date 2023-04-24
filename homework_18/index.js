@@ -20,9 +20,7 @@ let car = {
 }
 
 for (let key in car) {
-    if (car[key] === car.brand) {
-        console.log('**true**');
-    }
+    (car[key] === car.brand) ? console.log('**true**') : console.log('**false**');
 }
 
 // Task 3
