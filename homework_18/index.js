@@ -105,16 +105,15 @@ let cloneUserObject = {};
 
 console.log(typeof (user.family));
 
-for (let key in user) {
-    cloneUserObject[key] = user[key];
+for (let key in user) {   
     if (typeof user[key] === 'object' && user[key] !== null) {
-        let cloneKey = {};
-        for (let prop in user.friend){
-            cloneKey[prop] = user.friend[prop];
+        cloneUserObject[key] = {};
+        for (let prop in user[key]){
+            cloneUserObject[key][prop] = user[key][prop];
         }
-        cloneUserObject[key] = cloneKey;
+        continue;
     }
-    
+    cloneUserObject[key] = user[key];
 }
 
 
