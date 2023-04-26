@@ -101,16 +101,27 @@ let user = {
 	}
 };
 
-let cloneUserObject = Object.assign({},user);
+let cloneUserObject = {};
+
+console.log(typeof (user.family));
 
 for (let key in user) {
-    if (typeof user[key] === 'object') {
-        cloneUserObject.friend = Object.assign({}, user.friend);   
+    cloneUserObject[key] = user[key];
+    if (typeof user[key] === 'object' && user[key] !== null) {
+        let cloneKey = {};
+        for (let prop in user.friend){
+            cloneKey[prop] = user.friend[prop];
+        }
+        cloneUserObject[key] = cloneKey;
     }
+    
 }
+
+
 console.log(user);
 cloneUserObject.name = 'Denis';
 cloneUserObject.friend.name = 'Alex';
 console.log(cloneUserObject);
 console.log(user === cloneUserObject);
 console.log(user.friend === cloneUserObject.friend);
+
