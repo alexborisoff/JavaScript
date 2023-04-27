@@ -23,6 +23,10 @@ for (let i = numbers.length; i != 0; i--) {
     console.log(numbers);
 }
 
+for (let i = 0; i < numbers.length; i++) {
+    numbers.shift();
+    console.log(numbers);
+}
 
 // Task 4
 // Дан массив
@@ -98,7 +102,7 @@ console.log(join(binary, '1'));
 
 
 /*
-        ADVANSED
+        ADVANCED
 */
 // Task 1
 // Реализуйте функцию которая будет проверять, является ли слово палиндромом.
