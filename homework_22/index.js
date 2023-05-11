@@ -278,4 +278,9 @@ console.log(`Разница между total1 и total2: ${resTotal}`);
 ```javascript "din" => "(((" "recede" => "()()()" "Success" => ")())())" "(( @" => "))((" ```
 */
 
-const duplicate = 'Success';
+const duplicate = 'redece';
+
+const transformString = duplicate.toLocaleLowerCase().split('')
+        .map((item, index, arr) => arr.indexOf(item) !== arr.lastIndexOf(item) ? item = ')' : item = '(')
+        .join('');
+console.log(transformString);
