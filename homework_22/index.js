@@ -63,7 +63,7 @@ console.log('Объявленная функция:');
 function negativeArrayDec() {
     const arr = [];
     for (let i = 0; i < numbers.length; i++){  
-        if (numbers[i] < 0) {
+        if (numbers[i] >= 0) {
             arr.push(numbers[i]);
         } 
     }
@@ -73,7 +73,7 @@ function negativeArrayDec() {
 negativeArrayDec();
 
 console.log('Стрелочная функция:');
-let negativeArrayArrow = numbers.filter((item) => item < 0);
+let negativeArrayArrow = numbers.filter((item) => item >= 0);
 console.log(negativeArrayArrow);
 console.log(' ');
 
