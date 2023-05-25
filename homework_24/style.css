@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#main {
+    width: 100%;
+}
+
+div {
+    display: inline-block;
+    width: 9.715%;
+    height: 150px;   
+}
+/*
+#div1 {
+    background-color: #986464;
+}
+
+#div2 {
+    background-color: #859459;
+}
+
+#div3 {
+    background-color: #679542;
+}
+
+#div4 {
+    background-color: #457170;
+}
+
+#div5 {
+    background-color: #695766;
+}
+
+#div6 {
+    background-color: #782121;
+}
+
+#div7 {
+    background-color: #671876;
+}
+
+#div8 {
+    background-color: #833030;
+}
+
+#div9 {
+    background-color: #931362;
+}
+
+#div10 {
+    background-color: #000000;
+}
+*/
