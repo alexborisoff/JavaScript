@@ -1,7 +1,6 @@
 const btn = document.getElementsByTagName('button');
 const input = document.getElementById('result');
 let res = '';
-let cl = '';
 let a;
 
 for (let item of btn) {
