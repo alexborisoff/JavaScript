@@ -1,0 +1,30 @@
+input {
+    margin-right: 20px;
+    height: 40px;
+    width: 10%;
+    border-radius: 15px;
+    text-shadow: 1px 1px 1px #aaa;
+}
+
+#createChessboard {
+    height: 40px;
+    width: 10%;
+    border-radius: 15px;
+}
+
+td {
+    padding: 25px 25px;
+    border: 1px solid black;
+}
+
+table {
+    border: 3px solid black;
+}
+
+.black {
+    background-color: black;
+}
+
+.white {
+    background-color: white;
+}
