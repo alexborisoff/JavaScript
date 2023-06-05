@@ -6,7 +6,7 @@ const count = document.querySelector('span');
 
     if (localStorage.length !== 0) {
         for (let i = 0; i < localStorage.length; i++) {
-        var p = document.createElement('p');
+        const p = document.createElement('p');
         list.append(p);
         p.textContent += localStorage.getItem('key' + i);
         }
@@ -23,7 +23,7 @@ const count = document.querySelector('span');
         p.innerHTML += input.value;
         localStorage.setItem('key' + localStorage.length, p.textContent);
         }
-        
+
     // Отображение количества списка
     const countFriends = list.querySelectorAll('p');
     count.innerHTML = +countFriends.length;
