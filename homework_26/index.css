@@ -1,0 +1,33 @@
+p {
+    text-align: center;
+}
+
+#friends {
+    text-align: center;
+    width: 100%;
+    font-size: 50px;
+}
+
+#list {
+    border: 2px solid #ccc;
+    width: 50%;
+    border-radius: 20px 5px 10px 10px;
+}
+
+#main {
+    display: flex;
+    justify-content: space-around;
+}
+
+button {
+    height: 45px;
+    font-size: 20px;
+    border-radius: 20px;
+    background-color: greenyellow;
+    color: rgb(252, 37, 102);
+}
+
+#inputFriend {
+    height: 45px;
+    border-radius: 20px 5px 10px 10px;
+}
