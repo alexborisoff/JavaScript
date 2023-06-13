@@ -11,12 +11,13 @@ btnFindPost.addEventListener('click', () => {
         fetch(`https://jsonplaceholder.typicode.com/posts/${inputValue.value}`)
             .then(response => {
                 response.json()
-                    .then(json => {
-                        p.textContent = `user Id: ${json.userId} 
-                                        id: ${json.id} 
-                                        title: ${json.title}
-                                        title: ${json.body}`;
+
+                    .then(json => {    
+                        p.innerHTML = `user Id: ${json.userId} <br>
+                                        id: ${json.id} <br>
+                                        title: ${json.title} <br>
+                                        body: ${json.body} <br>`;
                     });
-            });
+            })
     }   
 })
