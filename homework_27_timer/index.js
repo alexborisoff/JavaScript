@@ -1,3 +1,4 @@
+/*
 const btnStart = document.getElementById('btn_start');
 const btnReset = document.getElementById('btn_reset');
 const btnSave = document.getElementById('btn_save');
@@ -13,8 +14,9 @@ const s_ms = document.getElementById('s_ms');
 
 
 btnStart.addEventListener('click', () => {
-    console.log(btnStart.className);
+
     if (btnStart.className === 'start_color') {
+        
         btnStart.className = 'stop_color';
         btnStart.value = 'stop';
         btnStart.innerHTML = 'STOP';
@@ -30,7 +32,7 @@ btnStart.addEventListener('click', () => {
 
         
 
-        setInterval(() => {
+        var timerId = setInterval(() => {
             s_sec.innerHTML = Number(s_sec.innerHTML) + 1;
             
             // СЕКУНДЫ
@@ -125,7 +127,7 @@ btnStart.addEventListener('click', () => {
             } 
             
             // ЧАСЫ
-            else if (s_hour.textContent === '1' &&f_min.textContent === '5' && s_min.textContent === '9' 
+            else if (s_hour.textContent === '1' && f_min.textContent === '5' && s_min.textContent === '9' 
                                                 && f_sec.textContent === '5' && s_sec.textContent === '7') {
                 s_hour.textContent = '2'
                 f_min.textContent = '0';
@@ -137,11 +139,16 @@ btnStart.addEventListener('click', () => {
 
         
 
-    } else {
-        btnStart.className = 'start_color';
-        btnStart.value = 'start';
-        btnStart.innerHTML = 'START';
+    } else if (btnStart.className === 'stop_color'){
+            
+            btnStart.className = 'start_color';
+            btnStart.value = 'start';
+            btnStart.innerHTML = 'START';
+            clearInterval(timerId);
+            console.log(timerId);
     }
+
+    
 
 });
 
@@ -149,7 +156,7 @@ btnStart.addEventListener('click', () => {
 
 
 btnReset.addEventListener('click', () => {
-    
+
         f_hour.innerHTML = '0';
         s_hour.innerHTML = '0';
         f_min.innerHTML = '0';
@@ -171,3 +178,92 @@ btnSave.addEventListener('click', () => {
     '.' + f_sec.textContent + s_sec.textContent + '.' + f_ms.textContent + s_ms.textContent;
     localStorage.setItem('s_sec', s_sec.textContent);
 });
+
+*/
+
+const el_timer = document.querySelector('#timer #time');
+const start = document.getElementById('btn_start_timer');
+const reset = document.getElementById('btn_reset_timer');
+const save = document.getElementById('btn_save_timer');
+const result_list = document.getElementById('list_results');
+
+let ms = 0;
+let sec = 0;
+let interval = null;
+
+
+
+
+const timer = () => {
+    ms++;
+    if (ms === 100) {
+        sec++;
+        ms = 0;
+    }
+    
+
+    let hours = Math.floor(sec / 3600);
+    let mins = Math.floor((sec - (hours * 3600)) / 60);
+    let secs = sec % 60;
+    let milisec = ms % 100;
+
+    if (ms < 10) {milisec = '0' + milisec};
+    if (secs < 10) { secs = '0' + secs};
+    if (mins < 10) { mins = '0' + mins};
+    if (hours < 10) { hours = '0' + hours};
+
+    el_timer.innerHTML = `${hours}:${mins}:${secs}:${milisec}`;
+    el_timer.style.color = 'white';
+}
+
+const start_timer = () => {
+    console.log(interval);  
+    
+    if (start.className === 'start_color') {
+        interval = setInterval(timer, 10);
+        start.className = 'stop_color';
+        start.innerHTML = 'Stop';
+        console.log(start.className);
+        
+    } else if (start.className === 'stop_color') {
+        stop_timer();
+        start.className = 'start_color';
+        start.innerHTML = 'Start';
+    }
+
+    /*
+    if (interval) {
+        return;
+    }
+    */
+}
+
+const stop_timer = () => {
+    clearInterval(interval);
+    interval = null;
+}
+
+const reset_timer = () => {
+    stop_timer();
+    sec = 0;
+    el_timer.innerHTML = '00:00:00:00';
+    if (start.className === 'stop_color') {
+        stop_timer();
+        start.className = 'start_color';
+        start.innerHTML = 'Start';
+    }
+}
+
+const save_timer = () => {
+    const result = document.createElement('p');
+    result_list.append(result);
+    result.textContent = el_timer.textContent;
+
+};
+
+
+
+
+start.addEventListener('click', start_timer);
+reset.addEventListener('click', reset_timer);
+save.addEventListener('click', save_timer)
