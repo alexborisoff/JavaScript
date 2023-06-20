@@ -1,7 +1,7 @@
 class User {
     name = 'Antosha';
     age = 20;
-    permission = 'isUser';
+    listPermission = ['admin', 'user', 'manager'];
     signIn() {
         console.log('DJ Eban Sign In');
     }
@@ -11,9 +11,12 @@ class User {
 }
 
 class Admin extends User {
+    permission = this.listPermission[0];
     banList = [];
     addBan() {
-        console.log('Added in ban');
+        this.permission === 'admin'
+            ? console.log("It's admin")
+            : this.banList.push(this.permission);
     }
     addPermission() {
         console.log('Permission added');
@@ -21,14 +24,15 @@ class Admin extends User {
 }
 
 class Manager extends Admin {
+    permission = this.listPermission[1];
     showBanList() {
-        console.log(banList);
+        console.log(this.banList);
     }
 }
 
 class GeneralUser extends User {
     showName() {
-        console.log(this.name + ' ' + this.age + ' ' + this.permission);
+        console.log(this.name + ' ' + this.age);
     }
 }
 
@@ -36,4 +40,11 @@ let gUser = new GeneralUser();
 gUser.showName();
 
 let user = new User('Nikita', 20, 'isAdmin');
+user.signIn();
 user.logOut();
+
+let admin = new Admin();
+admin.addBan();
+
+let manager = new Manager();
+manager.showBanList();
