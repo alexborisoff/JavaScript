@@ -1,5 +1,5 @@
 export default class APIPost {
-    getPost() {
+    static getPost() {
         const list = document.getElementById('listPosts');
         const post = document.createElement('p');
 
@@ -12,7 +12,7 @@ export default class APIPost {
             });
     }
 
-    setPost() {
+    static setPost() {
         const list = document.getElementById('listPosts');
         const post = document.createElement('p');
 
@@ -35,7 +35,7 @@ export default class APIPost {
             });
     }
 
-    updatePost() {
+    static updatePost() {
         const list = document.getElementById('listPosts');
 
         fetch('https://jsonplaceholder.typicode.com/posts/100', {
