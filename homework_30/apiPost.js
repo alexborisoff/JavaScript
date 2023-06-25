@@ -56,7 +56,7 @@ export default class APIPost {
             });
     }
 
-    deletePost() {
+    static deletePost() {
         const list = document.getElementById('listPosts');
         const post = document.createElement('p');
         fetch('https://jsonplaceholder.typicode.com/posts/100', {
