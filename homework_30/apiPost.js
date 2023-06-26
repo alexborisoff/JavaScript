@@ -6,7 +6,6 @@ export default class APIPost {
         fetch('https://jsonplaceholder.typicode.com/posts/100')
             .then((response) => response.json())
             .then((json) => {
-                console.log(json);
                 list.append(post);
                 post.innerHTML = json.userId + ' ' + json.body;
             });
@@ -29,7 +28,6 @@ export default class APIPost {
                 return response.json();
             })
             .then((json) => {
-                console.log(json);
                 list.append(post);
                 post.innerHTML = json.likes;
             });
@@ -51,7 +49,6 @@ export default class APIPost {
                 return response.json();
             })
             .then((json) => {
-                console.log(json);
                 list.innerText = `${json.body}`;
             });
     }

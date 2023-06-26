@@ -7,7 +7,6 @@ export default class APIPhotos {
         fetch('https://jsonplaceholder.typicode.com/photos/1')
             .then((response) => response.json())
             .then((json) => {
-                console.log(json);
                 list.append(photo);
                 photo.append(img);
                 img.setAttribute('src', json.url);
@@ -43,7 +42,6 @@ export default class APIPhotos {
         })
             .then((response) => response.json())
             .then((json) => {
-                console.log(json);
                 list.append(photo);
                 photo.innerText = `Updated title of Photo: ${json.title}`;
             });
@@ -55,7 +53,7 @@ export default class APIPhotos {
         })
             .then((res) => res.json())
             .then((data) => {
-                console.log('Photo data was deleted');
+                console.log('it\'s works');
             });
     }
 }

@@ -1,7 +1,7 @@
 import APIPost from './apiPost.js';
 import APIPhotos from './apiPhotos.js';
 
-let photos = new APIPhotos();
+const photos = new APIPhotos();
 
 photos.getPhoto();
 photos.setPhoto();
